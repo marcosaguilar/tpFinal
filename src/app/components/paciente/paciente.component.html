@@ -1,0 +1,139 @@
+<app-navbar></app-navbar>
+<form>
+  <div class="row">
+    <div class="col-md-4">
+      <label for="exampleInputEmail1">Nombre</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Ingrese su nombre"
+        name="nombre"
+        [(ngModel)]="nombre"
+      />
+    </div>
+    <div class="col-md-4">
+      <label for="exampleInputPassword1">Apellido</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputPassword1"
+        placeholder="Ingrese su apellido"
+        name="apellido"
+        [(ngModel)]="apellido"
+      />
+    </div>
+    <div class="col-md-4">
+      <label for="exampleInputPassword1">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleInputPassword1"
+        placeholder="Ingrese su email"
+        name="email"
+        [(ngModel)]="email"
+      />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <label for="exampleInputPassword1">Teléfono</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputPassword1"
+        placeholder="Ingrese su número de teléfono"
+        name="telefono"
+        [(ngModel)]="telefono"
+      />
+    </div>
+    <div class="col-md-4">
+      <label for="exampleInputPassword1">RUC</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputPassword1"
+        placeholder="ingrese su RUC"
+        name="ruc"
+        [(ngModel)]="ruc"
+      />
+    </div>
+    <div class="col-md-4">
+      <label for="exampleInputPassword1">Cédula</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputPassword1"
+        placeholder="Ingrese su cédula"
+        name="cedula"
+        [(ngModel)]="cedula"
+      />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <label>Fecha de Nacimiento</label>
+      <div class="col-md-6 input-group">
+        <input
+          class="form-control"
+          placeholder="yyyy-mm-dd"
+          name="dp"
+          [(ngModel)]="fechaNacimiento"
+          ngbDatepicker
+          #d="ngbDatepicker"
+        />
+        <div class="input-group-append">
+          <button
+            class="btn btn-outline-secondary calendar"
+            (click)="d.toggle()"
+            type="button"
+          >
+            <span class="calendar"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="searchFilter">
+    <button
+      type="submit"
+      class="btn btn-outline-primary"
+      (click)="crearPersona()"
+    >
+      Agregar paciente
+    </button>
+  </div>
+</form>
+
+<div class="row">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Email</th>
+        <th scope="col">Telefono</th>
+        <th scope="col">RUC</th>
+        <th scope="col">Cedula</th>
+        <th scope="col">Tipo de Persona</th>
+        <th scope="col">Fecha de Nacimiento</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let paciente of pacientes">
+        <td>{{ paciente.nombre }}</td>
+        <td>{{ paciente.apellido }}</td>
+        <td>{{ paciente.email }}</td>
+        <td>{{ paciente.telefono }}</td>
+        <td>{{ paciente.ruc }}</td>
+        <td>{{ paciente.cedula }}</td>
+        <td>{{ paciente.tipoPersona }}</td>
+        <td>{{ paciente.fechaNacimiento }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,146 @@
+<app-navbar></app-navbar>
+
+<div class="col-md-6">
+  <label>Fecha</label>
+  <div class="col-md-6 input-group">
+    <input
+      class="form-control"
+      placeholder="yyyy-mm-dd"
+      name="dp"
+      [(ngModel)]="fecha"
+      disabled
+    />
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary calendar" type="button">
+        <span class="calendar"></span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <label for="exampleInputEmail1">Categorias</label>
+    <select
+      class="form-select"
+      id="exampleInputEmail1"
+      aria-label="Default select example"
+      [(ngModel)]="categoria"
+      disabled="disabled"
+    >
+      <option [ngValue]="categoria">
+        {{ categoria }}
+      </option>
+    </select>
+  </div>
+
+  <div class="col-md-6">
+    <label for="exampleInputEmail1">Subcategorias</label>
+    <select
+      class="form-select"
+      id="exampleInputEmail1"
+      aria-label="Default select example"
+      [(ngModel)]="subcategoria"
+      disabled="disabled"
+    >
+      <option [ngValue]="subcategoria">
+        {{ subcategoria }}
+      </option>
+    </select>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <!-- <button
+      class="btn btn-lg btn-outline-primary"
+      (click)="openEmpleados(contentEmpleados)"
+    >
+      Empleados
+    </button> -->
+    Empleado: {{ empleado.nombre }} {{ empleado.apellido }}
+  </div>
+  <div class="col-md-6">
+    <!-- <button
+      class="btn btn-lg btn-outline-primary"
+      (click)="openClientes(contentClientes)"
+    >
+      Clientes
+    </button> -->
+    Cliente: {{ cliente.nombre }} {{ cliente.apellido }}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <label for="exampleFormControlTextarea1" class="form-label">Motivo</label>
+    <textarea
+      class="form-control"
+      id="exampleFormControlTextarea1"
+      rows="3"
+      [(ngModel)]="motivo"
+      disabled
+    ></textarea>
+  </div>
+  <div class="col-md-6">
+    <label for="exampleFormControlTextarea1" class="form-label"
+      >Diagnóstico</label
+    >
+    <textarea
+      class="form-control"
+      id="exampleFormControlTextarea1"
+      rows="3"
+      [(ngModel)]="diagnostico"
+      disabled
+    ></textarea>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <label for="exampleFormControlTextarea1" class="form-label"
+      >Observación</label
+    >
+    <textarea
+      class="form-control"
+      id="exampleFormControlTextarea1"
+      rows="3"
+      [(ngModel)]="observacion"
+    ></textarea>
+  </div>
+</div>
+
+<div id="searchFilter">
+  <button
+    type="button"
+    class="btn btn-outline-primary"
+    (click)="guardarFichaClinica()"
+  >
+    Guardar
+  </button>
+  <button type="button" class="btn btn-outline-primary" (click)="back()">
+    Cancelar
+  </button>
+</div>
+<div class="row">
+  <h4>Servicios creados a partir de esta ficha</h4>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Fecha</th>
+        <th scope="col">Presupuesto</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- <tr *ngFor="let ficha of fichasClinicas">
+        <td>{{ ficha.fechaHora }}</td>
+        <td>{{ ficha.idEmpleado.nombre }} {{ ficha.idEmpleado.apellido }}</td>
+        <td>{{ ficha.idCliente.nombre }} {{ ficha.idCliente.apellido }}</td>
+        <td>{{ ficha.idTipoProducto.idCategoria.descripcion }}</td>
+        <td>{{ ficha.idTipoProducto.descripcion }}</td>
+        <td><a href="#">Crear servicio</a></td>
+      </tr> -->
+    </tbody>
+  </table>
+</div>

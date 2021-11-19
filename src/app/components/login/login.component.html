@@ -1,0 +1,21 @@
+<div class="login">
+  <form class="custom-form" method="post">
+    <h1>Iniciar Sesión</h1>
+    <input
+      type="text"
+      [(ngModel)]="usuario"
+      name="usuario"
+      placeholder="Usuario"
+      required="required"
+    />
+    <input
+      type="password"
+      [(ngModel)]="password"
+      name="password"
+      placeholder="Password"
+      required="required"
+    />
+    <button type="submit" (click)="login()">Conectarse</button>
+    <p *ngIf="!bandera">Usuario y/o contraseñas incorrectas</p>
+  </form>
+</div>
