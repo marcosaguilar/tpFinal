@@ -20,6 +20,9 @@ import { ProductoComponent } from './components/producto/producto.component';
 import { LoginComponent } from './components/login/login.component';
 import { FichaClinicaModificarComponent } from './components/ficha-clinica/ficha-clinica-modificar/ficha-clinica-modificar.component';
 import { SubcategoriaComponent } from './components/categoria/subcategoria/subcategoria.component';
+import { AdministracionProductoComponent } from './components/administracion-producto/administracion-producto.component';
+import { AdministracionProductoAgregarComponent } from './components/administracion-producto/administracion-producto-agregar/administracion-producto-agregar.component';
+import { AdministracionProductoModificarComponent } from './components/administracion-producto/administracion-producto-modificar/administracion-producto-modificar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +39,9 @@ import { SubcategoriaComponent } from './components/categoria/subcategoria/subca
     LoginComponent,
     FichaClinicaModificarComponent,
     SubcategoriaComponent,
+    AdministracionProductoComponent,
+    AdministracionProductoAgregarComponent,
+    AdministracionProductoModificarComponent,
   ],
   imports: [
     BrowserModule,

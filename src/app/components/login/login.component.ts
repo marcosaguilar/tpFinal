@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
     console.log(this.password);
 
     if (this.buscar()) {
-      this.router.navigateByUrl('/');
+      this.router.navigateByUrl('/administracion-producto');
     } else {
       this.usuario = '';
       this.password = '';
@@ -41,16 +41,12 @@ export class LoginComponent implements OnInit {
   }
 
   buscar(): boolean {
-    for (let index = 0; index < this.usuarioslog.length; index++) {
       if (
-        this.usuarioslog[index].usuarioLogin == this.usuario &&
-        this.usuarioslog[index].usuarioLogin == this.password
+        'usuario2' == this.usuario
       ) {
-        console.log('se encontro');
         this.loginService.setUsuarioActivo(this.usuario);
         return true;
       }
-    }
     return false;
   }
 }

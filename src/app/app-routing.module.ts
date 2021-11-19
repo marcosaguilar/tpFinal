@@ -13,6 +13,9 @@ import { LoginComponent } from './components/login/login.component';
 import { FichaClinicaModificarComponent } from './components/ficha-clinica/ficha-clinica-modificar/ficha-clinica-modificar.component';
 import { Subcategoria } from './models/Subcategoria';
 import { SubcategoriaComponent } from './components/categoria/subcategoria/subcategoria.component';
+import { AdministracionProductoComponent } from './components/administracion-producto/administracion-producto.component';
+import { AdministracionProductoModificarComponent } from './components/administracion-producto/administracion-producto-modificar/administracion-producto-modificar.component';
+import { AdministracionProductoAgregarComponent } from './components/administracion-producto/administracion-producto-agregar/administracion-producto-agregar.component';
 
 const routes: Routes = [
   { path: '', component: FichaClinicaComponent },
@@ -32,6 +35,15 @@ const routes: Routes = [
   {
     path: 'categoria/agregar-subcategoria/:id',
     component: SubcategoriaComponent,
+  },
+  { path: 'administracion-producto', component: AdministracionProductoComponent },
+  {
+    path: 'administracion-producto/modificar-producto/:codigo',
+    component: AdministracionProductoModificarComponent,
+  },
+  {
+    path: 'agregar-producto',
+    component: AdministracionProductoAgregarComponent,
   },
 ];
 

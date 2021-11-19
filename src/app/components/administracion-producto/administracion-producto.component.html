@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+
+<div class="row">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Codigo</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Existencia</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let producto of this.productoService.productos">
+        <td>{{ producto.codigo }}</td>
+        <td>{{ producto.nombre }}</td>
+        <td>{{ producto.precio }}</td>
+        <td>{{ producto.existencia }}</td>
+        <td>
+          <a routerLink="modificar-producto/{{ producto.codigo }}"
+            >Editar</a
+          >
+          /
+          <a (click)="deleteProducto(producto)"
+            >Eliminar</a
+          >
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
