@@ -10,7 +10,7 @@ export class VentaService {
  
   ventas: Venta[] = [{id: 1, fecha: 'fecha', nroFactura: 123, cliente: {ruc: 1, nombreApellido: 'nombre', email: 'email'},
    total: 123, detalle: [
-     {producto: {codigo: 1, existencia: 'existencia', nombre: 'nombre', precio: 123}, cantidad: 123, totalDetalle: 123}
+     {producto: {codigo: 1, existencia: 2, nombre: 'nombre', precio: 123}, cantidad: 123, totalDetalle: 123}
     ]
   }];
 

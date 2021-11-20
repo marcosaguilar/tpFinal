@@ -56,13 +56,25 @@ export class VentaAgregarComponent implements OnInit {
   }
 
   guardarVentaDetalle(): void {
-    //traer maximo id y sumar uno
+    //si la cantidad es menor o igual a la existencia se guarda si no no.
     var ventaDetalle = new VentaDetalle();
     ventaDetalle.producto = this.productoService.getProducto(this.productoCodigo);
+    if(this.cantidad <= ventaDetalle.producto.existencia && this.cantidad != 0){
+      //sacar de la existencia la cantidad de productos
+      var productoActualizado : Producto = new Producto();
+      productoActualizado = ventaDetalle.producto;
+      productoActualizado.existencia = productoActualizado.existencia - this.cantidad;
+      this.productoService.putProducto(ventaDetalle.producto,productoActualizado);
 
-    ventaDetalle.cantidad = this.cantidad;
-    ventaDetalle.totalDetalle = ventaDetalle.cantidad * ventaDetalle.producto.precio;
-    this.detalles.push(ventaDetalle);
-    this.total = this.total + ventaDetalle.totalDetalle;
+      ventaDetalle.cantidad = this.cantidad;
+      ventaDetalle.totalDetalle = ventaDetalle.cantidad * ventaDetalle.producto.precio;
+      this.detalles.push(ventaDetalle);
+      this.total = this.total + ventaDetalle.totalDetalle;
+    }else{
+
+    }
+
+
+
   }
 }

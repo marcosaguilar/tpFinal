@@ -13,7 +13,7 @@ export class AdministracionProductoModificarComponent implements OnInit {
   codigo!: number;
   nombre!: string;
   precio!: number;
-  existencia!: string;
+  existencia!: number;
 
   producto: Producto = new Producto();
   productoModificado: Producto = new Producto();

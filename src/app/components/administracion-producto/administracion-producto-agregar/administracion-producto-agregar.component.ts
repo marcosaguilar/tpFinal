@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
-import { Categoria } from 'src/app/models/Categoria';
-import { Persona } from 'src/app/models/Persona';
-import { Subcategoria } from 'src/app/models/Subcategoria';
-import { FichaClinica } from 'src/app/models/FichaClinica';
 import { ProductoService } from 'src/app/services/producto.service';
 import { Producto } from 'src/app/models/Producto';
 
@@ -17,25 +13,9 @@ export class AdministracionProductoAgregarComponent implements OnInit {
   codigo!: number;
   nombre!: string;
   precio!: number;
-  existencia!: string;
+  existencia!: number;
 
-  fecha!: string;
-  categorias: Categoria[] = [];
-  subcategorias: Subcategoria[] = [];
-  empleados: Persona[] = [];
-  clientes: Persona[] = [];
-  fichasClinicas: FichaClinica[] = [];
-  FichaClinica!: FichaClinica;
-  closeResult = '';
-  //variables del formulario
-  categoria: string = '';
-  subcategoria: string = '';
-  cliente: Persona = new Persona();
-  empleado: Persona = new Persona();
-  motivo: string = '';
-  diagnostico: string = '';
-  observacion: string = '';
-  fichaId: number = 0;
+
   producto: Producto = new Producto();
 
   constructor(
