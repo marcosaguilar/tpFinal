@@ -17,7 +17,7 @@ export class VentaAgregarComponent implements OnInit {
   fecha!: string;
   nroFactura!: number;
   clienteRuc!: number;
-  total!: number;
+  total: number = 0;
   detalles: VentaDetalle [] = [];
   cantidad!: number;
   totalDetalle!: number;
@@ -26,7 +26,7 @@ export class VentaAgregarComponent implements OnInit {
   listaProductos!: Producto[];
 
   venta: Venta = new Venta();
-  ventaDetalle: VentaDetalle = new VentaDetalle();
+  
 
   productoCodigo!: number;
 
@@ -57,10 +57,12 @@ export class VentaAgregarComponent implements OnInit {
 
   guardarVentaDetalle(): void {
     //traer maximo id y sumar uno
-    this.ventaDetalle.producto = this.productoService.getProducto(this.productoCodigo);
+    var ventaDetalle = new VentaDetalle();
+    ventaDetalle.producto = this.productoService.getProducto(this.productoCodigo);
 
-    this.ventaDetalle.cantidad = this.cantidad;
-    this.ventaDetalle.totalDetalle = this.totalDetalle;
-    this.detalles.push(this.ventaDetalle);
+    ventaDetalle.cantidad = this.cantidad;
+    ventaDetalle.totalDetalle = ventaDetalle.cantidad * ventaDetalle.producto.precio;
+    this.detalles.push(ventaDetalle);
+    this.total = this.total + ventaDetalle.totalDetalle;
   }
 }

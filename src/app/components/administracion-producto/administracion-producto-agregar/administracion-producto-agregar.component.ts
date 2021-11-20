@@ -16,7 +16,7 @@ export class AdministracionProductoAgregarComponent implements OnInit {
 
   codigo!: number;
   nombre!: string;
-  precio!: string;
+  precio!: number;
   existencia!: string;
 
   fecha!: string;

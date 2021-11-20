@@ -12,7 +12,7 @@ import { Producto } from 'src/app/models/Producto';
 export class AdministracionProductoModificarComponent implements OnInit {
   codigo!: number;
   nombre!: string;
-  precio!: string;
+  precio!: number;
   existencia!: string;
 
   producto: Producto = new Producto();

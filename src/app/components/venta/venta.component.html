@@ -9,8 +9,6 @@
         <th scope="col">Numero Factura</th>
         <th scope="col">Nombre y Apellido</th>
         <th scope="col">Total</th>
-        <th scope="col">Producto</th>
-        <th scope="col">Cantidad del producto</th>
       </tr>
     </thead>
     <tbody>
@@ -20,8 +18,6 @@
         <td>{{ venta.nroFactura }}</td>
         <td>{{ venta.cliente.nombreApellido }}</td>
         <td>{{ venta.total }}</td>
-        <td>{{ venta.detalle[0].producto.nombre }}</td>
-        <td>{{ venta.detalle[0].cantidad }}</td>
       </tr>
     </tbody>
   </table>

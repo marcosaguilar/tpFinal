@@ -31,6 +31,7 @@
         id="exampleFormControlTextarea1"
         rows="3"
         [(ngModel)]="total"
+        [disabled]="true"
       ></textarea>
     </div>
     <div class="col-md-6">
@@ -56,21 +57,12 @@
           [(ngModel)]="cantidad"
         ></textarea>
       </div>
-    <div class="col-md-6">
-      <label for="exampleFormControlTextarea1" class="form-label">Total Detalle</label>
-      <textarea
-        class="form-control"
-        id="exampleFormControlTextarea1"
-        rows="3"
-        [(ngModel)]="totalDetalle"
-      ></textarea>
-    </div>
   </div>
 
   <div class="row">
     <div class="col-md-6">
         <select class="form-select" aria-label="Default select example" [(ngModel)]="productoCodigo">
-            <option *ngFor="let producto of listaProductos" [value]="producto.codigo">{{producto.nombre}}</option>
+            <option *ngFor="let producto of listaProductos" [value]="producto.codigo">Nombre: {{producto.nombre}} - Precio: {{producto.precio}}</option>
           </select>
     </div>
     <div class="col-md-6">

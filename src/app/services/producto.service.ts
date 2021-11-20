@@ -11,7 +11,7 @@ import { Producto } from '../models/Producto';
 })
 export class ProductoService {
  
-  productos: Producto[] = [{codigo: 1, existencia: 'existencia', nombre: 'nombreProducto', precio: 'precio'}];
+  productos: Producto[] = [{codigo: 1, existencia: 'existencia', nombre: 'nombreProducto', precio: 321}];
 
   endpoint = 'http://181.123.243.5:8080/stock-pwfe/presentacionProducto';
 
