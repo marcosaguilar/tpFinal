@@ -11,7 +11,7 @@ import { Producto } from '../models/Producto';
 })
 export class ProductoService {
  
-  productos: Producto[] = [{codigo: 1, existencia: 'existencia', nombre: 'nombre', precio: 'precio'}];
+  productos: Producto[] = [{codigo: 1, existencia: 'existencia', nombre: 'nombreProducto', precio: 'precio'}];
 
   endpoint = 'http://181.123.243.5:8080/stock-pwfe/presentacionProducto';
 
@@ -46,6 +46,10 @@ export class ProductoService {
       }
     }
     return (this.productos[0]);   // tiene que retornar si o si producto
+  }
+
+  getListaProductos(): Producto[]{
+    return this.productos;
   }
 
 

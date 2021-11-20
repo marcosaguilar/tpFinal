@@ -1,0 +1,108 @@
+<app-navbar></app-navbar>
+
+<div class="row">
+  <div class="col-md-6">
+    <label for="exampleFormControlTextarea1" class="form-label">Fecha</label>
+    <textarea
+      class="form-control"
+      id="exampleFormControlTextarea1"
+      rows="3"
+      [(ngModel)]="fecha"
+    ></textarea>
+  </div>
+  <div class="col-md-6">
+    <label for="exampleFormControlTextarea1" class="form-label"
+      >Numero de Factura</label
+    >
+    <textarea
+      class="form-control"
+      id="exampleFormControlTextarea1"
+      rows="3"
+      [(ngModel)]="nroFactura"
+    ></textarea>
+  </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+      <label for="exampleFormControlTextarea1" class="form-label">Total</label>
+      <textarea
+        class="form-control"
+        id="exampleFormControlTextarea1"
+        rows="3"
+        [(ngModel)]="total"
+      ></textarea>
+    </div>
+    <div class="col-md-6">
+        <select class="form-select" aria-label="Default select example" [(ngModel)]="clienteRuc">
+            <option *ngFor="let cliente of listaClientes" [value]="cliente.ruc">{{cliente.nombreApellido}}</option>
+          </select>
+    </div>
+  </div>
+
+<br>
+<h4>Detalles</h4>
+<br>
+<br>
+
+
+  <div class="row">
+    <div class="col-md-6">
+        <label for="exampleFormControlTextarea1" class="form-label">Cantidad</label>
+        <textarea
+          class="form-control"
+          id="exampleFormControlTextarea1"
+          rows="3"
+          [(ngModel)]="cantidad"
+        ></textarea>
+      </div>
+    <div class="col-md-6">
+      <label for="exampleFormControlTextarea1" class="form-label">Total Detalle</label>
+      <textarea
+        class="form-control"
+        id="exampleFormControlTextarea1"
+        rows="3"
+        [(ngModel)]="totalDetalle"
+      ></textarea>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+        <select class="form-select" aria-label="Default select example" [(ngModel)]="productoCodigo">
+            <option *ngFor="let producto of listaProductos" [value]="producto.codigo">{{producto.nombre}}</option>
+          </select>
+    </div>
+    <div class="col-md-6">
+        <button type="button" class="btn btn-outline-primary" (click)="guardarVentaDetalle()">
+            Agregar detalle
+          </button>
+    </div>
+  </div>
+
+  
+
+
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Producto</th>
+          <th scope="col">Cantidad</th>
+          <th scope="col">Total Detalle</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ventaDetalle of detalles">
+          <td>{{ ventaDetalle.producto.nombre }}</td>
+          <td>{{ ventaDetalle.cantidad }}</td>
+          <td>{{ ventaDetalle.totalDetalle }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <button type="button" class="btn btn-outline-primary" (click)="guardarVenta()">
+    Guardar
+  </button>

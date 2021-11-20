@@ -18,6 +18,8 @@ import { AdministracionProductoAgregarComponent } from './components/administrac
 import { ClienteComponent } from './components/cliente/cliente.component';
 import { ClienteAgregarComponent } from './components/cliente/cliente-agregar/cliente-agregar.component';
 import { ClienteModificarComponent } from './components/cliente/cliente-modificar/cliente-modificar.component';
+import { VentaComponent } from './components/venta/venta.component';
+import { VentaAgregarComponent } from './components/venta/venta-agregar/venta-agregar.component';
 
 const routes: Routes = [
   { path: '', component: FichaClinicaComponent },
@@ -50,6 +52,8 @@ const routes: Routes = [
   { path: 'cliente', component: ClienteComponent },
   { path: 'cliente-agregar', component: ClienteAgregarComponent },
   { path: 'cliente/cliente-modificar/:ruc', component: ClienteModificarComponent },
+  { path: 'venta', component: VentaComponent },
+  { path: 'venta-agregar', component: VentaAgregarComponent },
 ];
 
 @NgModule({

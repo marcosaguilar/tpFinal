@@ -8,12 +8,16 @@ import { Cliente } from '../models/Cliente';
 })
 export class ClienteService {
  
-  clientes: Cliente[] = [{ruc: 1, nombreApellido: 'nombre', email: 'email'}];
+  clientes: Cliente[] = [{ruc: 1, nombreApellido: 'nombreCliente', email: 'email'}];
 
   constructor(private http: HttpClient) {}
 
   addCliente(cliente: Cliente): void {
     this.clientes.push(cliente);
+  }
+
+  getListaClientes(): Cliente[]{
+    return this.clientes;
   }
 
   putCliente(cliente: Cliente, clienteActualizado: Cliente): void {

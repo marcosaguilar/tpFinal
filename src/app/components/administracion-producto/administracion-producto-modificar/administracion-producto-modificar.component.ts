@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
-import { Categoria } from 'src/app/models/Categoria';
-import { Persona } from 'src/app/models/Persona';
-import { Subcategoria } from 'src/app/models/Subcategoria';
-import { FichaClinica } from 'src/app/models/FichaClinica';
 import { ProductoService } from 'src/app/services/producto.service';
 import { ActivatedRoute } from '@angular/router';
 import { Producto } from 'src/app/models/Producto';
@@ -19,25 +15,7 @@ export class AdministracionProductoModificarComponent implements OnInit {
   precio!: string;
   existencia!: string;
 
-  fecha!: string;
-  categorias: Categoria[] = [];
-  subcategorias: Subcategoria[] = [];
-  empleados: Persona[] = [];
-  clientes: Persona[] = [];
-  fichasClinicas: FichaClinica[] = [];
-  FichaClinica!: FichaClinica;
-  closeResult = '';
-  //variables del formulario
-  categoria: string = '';
-  subcategoria: string = '';
-  cliente: Persona = new Persona();
-  empleado: Persona = new Persona();
-  motivo: string = '';
-  diagnostico: string = '';
-  observacion: string = '';
-  fichaId: number = 0;
   producto: Producto = new Producto();
-
   productoModificado: Producto = new Producto();
 
   constructor(
@@ -61,8 +39,5 @@ export class AdministracionProductoModificarComponent implements OnInit {
     this.productoModificado.precio = this.precio;
     this.productoService.putProducto(this.producto, this.productoModificado);
   }
-
-  back(): void {
-    this._location.back();
-  }
+  
 }

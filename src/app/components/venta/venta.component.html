@@ -1,0 +1,28 @@
+<app-navbar></app-navbar>
+
+<div class="row">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Numero Factura</th>
+        <th scope="col">Nombre y Apellido</th>
+        <th scope="col">Total</th>
+        <th scope="col">Producto</th>
+        <th scope="col">Cantidad del producto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let venta of this.ventaService.ventas">
+        <td>{{ venta.id }}</td>
+        <td>{{ venta.fecha }}</td>
+        <td>{{ venta.nroFactura }}</td>
+        <td>{{ venta.cliente.nombreApellido }}</td>
+        <td>{{ venta.total }}</td>
+        <td>{{ venta.detalle[0].producto.nombre }}</td>
+        <td>{{ venta.detalle[0].cantidad }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
