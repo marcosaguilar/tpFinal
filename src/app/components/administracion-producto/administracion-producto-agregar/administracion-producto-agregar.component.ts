@@ -5,7 +5,6 @@ import { Persona } from 'src/app/models/Persona';
 import { Subcategoria } from 'src/app/models/Subcategoria';
 import { FichaClinica } from 'src/app/models/FichaClinica';
 import { ProductoService } from 'src/app/services/producto.service';
-import { ActivatedRoute } from '@angular/router';
 import { Producto } from 'src/app/models/Producto';
 
 @Component({

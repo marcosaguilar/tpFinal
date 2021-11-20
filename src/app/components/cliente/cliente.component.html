@@ -1,0 +1,30 @@
+<app-navbar></app-navbar>
+
+<div class="row">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Ruc</th>
+        <th scope="col">Nombre y Apellido</th>
+        <th scope="col">Email</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cliente of this.clienteService.clientes">
+        <td>{{ cliente.ruc }}</td>
+        <td>{{ cliente.nombreApellido }}</td>
+        <td>{{ cliente.email }}</td>
+        <td>
+          <a routerLink="cliente-modificar/{{ cliente.ruc }}"
+            >Editar</a
+          >
+          /
+          <a (click)="deleteCliente(cliente)"
+            >Eliminar</a
+          >
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

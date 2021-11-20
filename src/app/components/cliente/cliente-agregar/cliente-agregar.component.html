@@ -1,0 +1,41 @@
+<app-navbar></app-navbar>
+
+<div class="row">
+  <div class="col-md-6">
+    <label for="exampleFormControlTextarea1" class="form-label">Ruc</label>
+    <textarea
+      class="form-control"
+      id="exampleFormControlTextarea1"
+      rows="3"
+      [(ngModel)]="ruc"
+    ></textarea>
+  </div>
+  <div class="col-md-6">
+    <label for="exampleFormControlTextarea1" class="form-label"
+      >Nombre y Apellido</label
+    >
+    <textarea
+      class="form-control"
+      id="exampleFormControlTextarea1"
+      rows="3"
+      [(ngModel)]="nombreApellido"
+    ></textarea>
+  </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+      <label for="exampleFormControlTextarea1" class="form-label">Email</label>
+      <textarea
+        class="form-control"
+        id="exampleFormControlTextarea1"
+        rows="3"
+        [(ngModel)]="email"
+      ></textarea>
+    </div>
+  </div>
+
+
+  <button type="button" class="btn btn-outline-primary" (click)="guardarCliente()">
+    Guardar
+  </button>

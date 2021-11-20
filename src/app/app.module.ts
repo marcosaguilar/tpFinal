@@ -23,6 +23,9 @@ import { SubcategoriaComponent } from './components/categoria/subcategoria/subca
 import { AdministracionProductoComponent } from './components/administracion-producto/administracion-producto.component';
 import { AdministracionProductoAgregarComponent } from './components/administracion-producto/administracion-producto-agregar/administracion-producto-agregar.component';
 import { AdministracionProductoModificarComponent } from './components/administracion-producto/administracion-producto-modificar/administracion-producto-modificar.component';
+import { ClienteComponent } from './components/cliente/cliente.component';
+import { ClienteAgregarComponent } from './components/cliente/cliente-agregar/cliente-agregar.component';
+import { ClienteModificarComponent } from './components/cliente/cliente-modificar/cliente-modificar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +45,9 @@ import { AdministracionProductoModificarComponent } from './components/administr
     AdministracionProductoComponent,
     AdministracionProductoAgregarComponent,
     AdministracionProductoModificarComponent,
+    ClienteComponent,
+    ClienteAgregarComponent,
+    ClienteModificarComponent,
   ],
   imports: [
     BrowserModule,

@@ -11,11 +11,13 @@ import { ServicioAgregarComponent } from './components/servicio/servicio-agregar
 import { ServicioComponent } from './components/servicio/servicio.component';
 import { LoginComponent } from './components/login/login.component';
 import { FichaClinicaModificarComponent } from './components/ficha-clinica/ficha-clinica-modificar/ficha-clinica-modificar.component';
-import { Subcategoria } from './models/Subcategoria';
 import { SubcategoriaComponent } from './components/categoria/subcategoria/subcategoria.component';
 import { AdministracionProductoComponent } from './components/administracion-producto/administracion-producto.component';
 import { AdministracionProductoModificarComponent } from './components/administracion-producto/administracion-producto-modificar/administracion-producto-modificar.component';
 import { AdministracionProductoAgregarComponent } from './components/administracion-producto/administracion-producto-agregar/administracion-producto-agregar.component';
+import { ClienteComponent } from './components/cliente/cliente.component';
+import { ClienteAgregarComponent } from './components/cliente/cliente-agregar/cliente-agregar.component';
+import { ClienteModificarComponent } from './components/cliente/cliente-modificar/cliente-modificar.component';
 
 const routes: Routes = [
   { path: '', component: FichaClinicaComponent },
@@ -45,6 +47,9 @@ const routes: Routes = [
     path: 'agregar-producto',
     component: AdministracionProductoAgregarComponent,
   },
+  { path: 'cliente', component: ClienteComponent },
+  { path: 'cliente-agregar', component: ClienteAgregarComponent },
+  { path: 'cliente/cliente-modificar/:ruc', component: ClienteModificarComponent },
 ];
 
 @NgModule({
