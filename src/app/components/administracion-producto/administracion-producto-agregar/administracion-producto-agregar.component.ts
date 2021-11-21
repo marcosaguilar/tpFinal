@@ -6,15 +6,13 @@ import { Producto } from 'src/app/models/Producto';
 @Component({
   selector: 'app-administracion-producto-agregar',
   templateUrl: './administracion-producto-agregar.component.html',
-  styleUrls: ['./administracion-producto-agregar.component.css']
+  styleUrls: ['./administracion-producto-agregar.component.css'],
 })
 export class AdministracionProductoAgregarComponent implements OnInit {
-
   codigo!: number;
   nombre!: string;
   precio!: number;
   existencia!: number;
-
 
   producto: Producto = new Producto();
 
@@ -23,8 +21,7 @@ export class AdministracionProductoAgregarComponent implements OnInit {
     private _location: Location
   ) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   guardarProducto(): void {
     this.producto.codigo = this.codigo;

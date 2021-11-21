@@ -11,9 +11,7 @@
     ></textarea>
   </div>
   <div class="col-md-6">
-    <label for="exampleFormControlTextarea1" class="form-label"
-      >Nombre</label
-    >
+    <label for="exampleFormControlTextarea1" class="form-label">Nombre</label>
     <textarea
       class="form-control"
       id="exampleFormControlTextarea1"
@@ -24,29 +22,33 @@
 </div>
 
 <div class="row">
-    <div class="col-md-6">
-      <label for="exampleFormControlTextarea1" class="form-label">Precio</label>
-      <textarea
-        class="form-control"
-        id="exampleFormControlTextarea1"
-        rows="3"
-        [(ngModel)]="precio"
-      ></textarea>
-    </div>
-    <div class="col-md-6">
-      <label for="exampleFormControlTextarea1" class="form-label"
-        >Existencia</label
-      >
-      <textarea
-        class="form-control"
-        id="exampleFormControlTextarea1"
-        rows="3"
-        [(ngModel)]="existencia"
-      ></textarea>
-    </div>
+  <div class="col-md-6">
+    <label for="exampleFormControlTextarea1" class="form-label">Precio</label>
+    <textarea
+      class="form-control"
+      id="exampleFormControlTextarea1"
+      rows="3"
+      [(ngModel)]="precio"
+    ></textarea>
   </div>
+  <div class="col-md-6">
+    <label for="exampleFormControlTextarea1" class="form-label"
+      >Existencia</label
+    >
+    <textarea
+      class="form-control"
+      id="exampleFormControlTextarea1"
+      rows="3"
+      [(ngModel)]="existencia"
+    ></textarea>
+  </div>
+</div>
 
-
-  <button type="button" class="btn btn-outline-primary" (click)="guardarProducto()">
-    Guardar
-  </button>
+<button
+  type="button"
+  class="btn btn-outline-primary"
+  (click)="guardarProducto()"
+  routerLink="/administracion-producto"
+>
+  Guardar
+</button>
