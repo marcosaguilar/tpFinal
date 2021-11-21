@@ -3,12 +3,16 @@
 <div class="row">
   <div class="col-md-6">
     <label for="exampleFormControlTextarea1" class="form-label">Fecha</label>
-    <textarea
+      <input
       class="form-control"
-      id="exampleFormControlTextarea1"
-      rows="3"
+      placeholder="yyyy-mm-dd"
+      name="dp"
       [(ngModel)]="fecha"
-    ></textarea>
+      ngbDatepicker
+      #d="ngbDatepicker"
+      (click)="d.toggle()"
+      autocomplete="off"
+    />
   </div>
   <div class="col-md-6">
     <label for="exampleFormControlTextarea1" class="form-label"

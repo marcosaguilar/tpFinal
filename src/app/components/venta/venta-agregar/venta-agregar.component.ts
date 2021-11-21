@@ -7,6 +7,7 @@ import { ClienteService } from 'src/app/services/cliente.service';
 import { ProductoService } from 'src/app/services/producto.service';
 import { Producto } from 'src/app/models/Producto';
 import { ToastrService } from 'ngx-toastr';
+import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-venta-agregar',
@@ -14,7 +15,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./venta-agregar.component.css'],
 })
 export class VentaAgregarComponent implements OnInit {
-  fecha!: string;
+  fecha!: NgbDateStruct;
   nroFactura!: number;
   clienteRuc!: number;
   total: number = 0;

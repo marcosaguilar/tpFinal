@@ -21,6 +21,10 @@ import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
+
+import { VentaResumidoComponent } from './components/reportes/venta-resumido/venta-resumido.component';
+import { VentaDetalladoComponent } from './components/reportes/venta-detallado/venta-detallado.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +38,8 @@ import { ToastrModule } from 'ngx-toastr';
     ClienteModificarComponent,
     VentaComponent,
     VentaAgregarComponent,
+    VentaResumidoComponent,
+    VentaDetalladoComponent,
   ],
   imports: [
     BrowserModule,

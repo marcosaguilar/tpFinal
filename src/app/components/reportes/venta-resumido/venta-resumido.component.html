@@ -1,0 +1,58 @@
+<app-navbar></app-navbar>
+<div class="row">
+    <div class="col-md-4">
+        <label for="">Clientes</label>
+        <select class="form-select" aria-label="Default select example" [(ngModel)]="clienteRuc">
+            <option *ngFor="let cliente of clientes" [value]="cliente.ruc">{{cliente.nombreApellido}}</option>
+        </select>
+    </div>
+    <div class="col-md-4">
+        <label for="">Fecha desde</label>
+        <input
+        class="form-control"
+        placeholder="yyyy-mm-dd"
+        name="dp"
+        [(ngModel)]="fechaDesde"
+        ngbDatepicker
+        #d="ngbDatepicker"
+        (click)="d.toggle()"
+        autocomplete="off"
+      />
+    </div>
+    <div class="col-md-4">
+        <label for="">Fecha hasta</label>
+        <input
+        class="form-control"
+        placeholder="yyyy-mm-dd"
+        name="dp"
+        [(ngModel)]="fechaHasta"
+        ngbDatepicker
+        #d2="ngbDatepicker"
+        (click)="d2.toggle()"
+        autocomplete="off"
+      />
+    </div>
+</div>
+<button type="button" class="btn btn-primary" (click)="filtrar()">Filtrar</button>
+
+<div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Cliente</th>
+          <th scope="col">Fecha</th>
+          <th scope="col">Total de la venta</th>
+          <th scope="col">Factura</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let venta of ventas">
+          <td>{{ venta.cliente.nombreApellido }}</td>
+          <td>{{ venta.fecha }}</td>
+          <td>{{ venta.total }}</td>
+          <td>{{ venta.nroFactura }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
