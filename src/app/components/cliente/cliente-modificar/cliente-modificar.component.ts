@@ -6,11 +6,10 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-cliente-modificar',
   templateUrl: './cliente-modificar.component.html',
-  styleUrls: ['./cliente-modificar.component.css']
+  styleUrls: ['./cliente-modificar.component.css'],
 })
 export class ClienteModificarComponent implements OnInit {
-
-  ruc!: number;
+  ruc?: number;
   nombreApellido!: string;
   email!: string;
 
@@ -24,7 +23,9 @@ export class ClienteModificarComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.cliente = this.clienteService.getCliente(this.router.snapshot.params.ruc);
+    this.cliente = this.clienteService.getCliente(
+      this.router.snapshot.params.ruc
+    );
     this.ruc = this.cliente.ruc;
     this.nombreApellido = this.cliente.nombreApellido;
     this.email = this.cliente.email;
@@ -35,5 +36,8 @@ export class ClienteModificarComponent implements OnInit {
     this.clienteModificado.nombreApellido = this.nombreApellido;
     this.clienteModificado.email = this.email;
     this.clienteService.putCliente(this.cliente, this.clienteModificado);
+    this.ruc = undefined;
+    this.nombreApellido = '';
+    this.email = '';
   }
 }

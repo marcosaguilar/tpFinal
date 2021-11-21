@@ -16,13 +16,9 @@
         <td>{{ cliente.nombreApellido }}</td>
         <td>{{ cliente.email }}</td>
         <td>
-          <a routerLink="cliente-modificar/{{ cliente.ruc }}"
-            >Editar</a
-          >
+          <a routerLink="cliente-modificar/{{ cliente.ruc }}">Editar</a>
           /
-          <a (click)="deleteCliente(cliente)"
-            >Eliminar</a
-          >
+          <a class="del" (click)="deleteCliente(cliente)">Eliminar</a>
         </td>
       </tr>
     </tbody>

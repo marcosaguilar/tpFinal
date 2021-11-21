@@ -18,13 +18,9 @@
         <td>{{ producto.precio }}</td>
         <td>{{ producto.existencia }}</td>
         <td>
-          <a routerLink="modificar-producto/{{ producto.codigo }}"
-            >Editar</a
-          >
+          <a routerLink="modificar-producto/{{ producto.codigo }}">Editar</a>
           /
-          <a (click)="deleteProducto(producto)"
-            >Eliminar</a
-          >
+          <a class="del" (click)="deleteProducto(producto)">Eliminar</a>
         </td>
       </tr>
     </tbody>

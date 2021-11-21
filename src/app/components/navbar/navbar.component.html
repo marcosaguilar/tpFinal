@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" routerLink="">FE</a>
+    <a class="navbar-brand" routerLink="#">FE</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -29,7 +29,9 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <li>
-              <a class="dropdown-item" routerLink="/administracion-producto">Lista</a>
+              <a class="dropdown-item" routerLink="/administracion-producto"
+                >Lista</a
+              >
             </li>
             <li>
               <a class="dropdown-item" routerLink="/agregar-producto"
@@ -83,9 +85,7 @@
       </ul>
     </div>
     <li class="nav-item" id="cerrarsesion" style="float: right">
-      <a class="nav-link" routerLink="/login" (click)="ponerOff()"
-        >Cerrar sesion</a
-      >
+      <a class="nav-link" routerLink="" (click)="ponerOff()">Cerrar sesion</a>
     </li>
   </div>
 </nav>
