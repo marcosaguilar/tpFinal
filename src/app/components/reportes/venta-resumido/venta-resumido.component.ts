@@ -20,7 +20,6 @@ export class VentaResumidoComponent implements OnInit {
   fechaDesde!: NgbDateStruct;
   fechaHasta!: NgbDateStruct;
 
-
   constructor(private ventaService: VentaService, private clienteService: ClienteService) { }
 
   ngOnInit(): void {
@@ -29,8 +28,21 @@ export class VentaResumidoComponent implements OnInit {
   }
 
   filtrar() {
-    console.log(this.fechaDesde);
-    console.log(this.fechaHasta);
-  }
+    let ventasFiltradas = this.ventas;
+    this.ventas.forEach((venta, index) => { //filtro de cliente
+      if (venta.cliente.ruc !== this.clienteRuc) this.ventas.splice(index, 1);
+    })
 
+    this.ventas.forEach((venta, index) => { //filtro de fecha desde
+      if (venta.fecha.year >= this.fechaDesde.year && venta.fecha.month >= this.fechaDesde.month){
+        if (venta.fecha.day >= this.fechaDesde.day && venta.fecha.month == this.fechaDesde.month) this.ventas.splice(index, 1);
+      }
+    })
+
+    this.ventas.forEach((venta, index) => { //filtro de fecha hasta
+      if (venta.fecha.year <= this.fechaDesde.year && venta.fecha.month <= this.fechaDesde.month){
+        if (venta.fecha.day <= this.fechaDesde.day && venta.fecha.month == this.fechaDesde.month) this.ventas.splice(index, 1);
+      }
+    })
+  }
 }

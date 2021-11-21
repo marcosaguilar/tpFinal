@@ -2,19 +2,20 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Injectable } from '@angular/core';
 import { Venta } from '../models/Venta';
+import { ClienteService } from './cliente.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class VentaService {
  
-  ventas: Venta[] = [{id: 1, fecha: {year:2021, month:10, day:10}, nroFactura: 123, cliente: {ruc: 1, nombreApellido: 'nombre', email: 'email'},
+  ventas: Venta[] = [{id: 1, fecha: {year:2021, month:10, day:10}, nroFactura: 123, cliente: this.clienteService.getCliente(1),
    total: 123, detalle: [
      {producto: {codigo: 1, existencia: 2, nombre: 'nombre', precio: 123}, cantidad: 123, totalDetalle: 123}
     ]
   }];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private clienteService: ClienteService) {}
 
   addVenta(venta: Venta): void {
     this.ventas.push(venta);

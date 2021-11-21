@@ -48,7 +48,7 @@
       <tbody>
         <tr *ngFor="let venta of ventas">
           <td>{{ venta.cliente.nombreApellido }}</td>
-          <td>{{ venta.fecha }}</td>
+          <td>{{ venta.fecha.year + "/" + venta.fecha.month + "/" + venta.fecha.day}}</td>
           <td>{{ venta.total }}</td>
           <td>{{ venta.nroFactura }}</td>
         </tr>
