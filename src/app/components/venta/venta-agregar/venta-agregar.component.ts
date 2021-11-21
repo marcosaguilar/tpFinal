@@ -6,6 +6,7 @@ import { Cliente } from 'src/app/models/Cliente';
 import { ClienteService } from 'src/app/services/cliente.service';
 import { ProductoService } from 'src/app/services/producto.service';
 import { Producto } from 'src/app/models/Producto';
+import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-venta-agregar',
@@ -14,7 +15,7 @@ import { Producto } from 'src/app/models/Producto';
 })
 export class VentaAgregarComponent implements OnInit {
 
-  fecha!: string;
+  fecha!: NgbDateStruct;
   nroFactura!: number;
   clienteRuc!: number;
   total: number = 0;

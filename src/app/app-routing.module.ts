@@ -9,6 +9,8 @@ import { ClienteAgregarComponent } from './components/cliente/cliente-agregar/cl
 import { ClienteModificarComponent } from './components/cliente/cliente-modificar/cliente-modificar.component';
 import { VentaComponent } from './components/venta/venta.component';
 import { VentaAgregarComponent } from './components/venta/venta-agregar/venta-agregar.component';
+import { VentaResumidoComponent } from './components/reportes/venta-resumido/venta-resumido.component';
+import { VentaDetalladoComponent } from './components/reportes/venta-detallado/venta-detallado.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -26,6 +28,8 @@ const routes: Routes = [
   { path: 'cliente/cliente-modificar/:ruc', component: ClienteModificarComponent },
   { path: 'venta', component: VentaComponent },
   { path: 'venta-agregar', component: VentaAgregarComponent },
+  { path: 'reporte-ventas-resumidas', component: VentaResumidoComponent },
+  { path: 'reporte-ventas-detalladas', component: VentaDetalladoComponent },
 ];
 
 @NgModule({

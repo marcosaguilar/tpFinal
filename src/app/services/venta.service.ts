@@ -8,7 +8,7 @@ import { Venta } from '../models/Venta';
 })
 export class VentaService {
  
-  ventas: Venta[] = [{id: 1, fecha: 'fecha', nroFactura: 123, cliente: {ruc: 1, nombreApellido: 'nombre', email: 'email'},
+  ventas: Venta[] = [{id: 1, fecha: {year:2021, month:10, day:10}, nroFactura: 123, cliente: {ruc: 1, nombreApellido: 'nombre', email: 'email'},
    total: 123, detalle: [
      {producto: {codigo: 1, existencia: 2, nombre: 'nombre', precio: 123}, cantidad: 123, totalDetalle: 123}
     ]
@@ -41,6 +41,10 @@ export class VentaService {
       }
     }
     return (this.ventas[0]);   // tiene que retornar si o si venta
+  }
+
+  getVentas(): Venta[] {
+    return this.ventas;
   }
 
 }

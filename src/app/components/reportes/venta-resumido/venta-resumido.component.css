@@ -1,0 +1,10 @@
+.calendar{
+    background: url('../../../../assets/calendar-alt-regular.svg') no-repeat;
+    cursor:pointer;
+    border: none;
+    /* background-size: 50px; */
+    width: 35px;
+    height: 35px;
+    /* border: 2px solid; */
+    /* color: pink; */
+}
