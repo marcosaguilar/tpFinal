@@ -1,0 +1,59 @@
+[33mcommit 73c148dc24cd9ba302c2f781928fd4032ed15d16[m[33m ([m[1;36mHEAD -> [m[1;32mdiego[m[33m, [m[1;31morigin/diego[m[33m)[m
+Author: Diegocent <diegovillalbacent1234@gmail.com>
+Date:   Sun Nov 21 17:56:15 2021 -0300
+
+    toast al superar la existencia
+
+[33mcommit d9cacde7a1af3832da228e7f0b6a78349b490862[m
+Author: Diegocent <diegovillalbacent1234@gmail.com>
+Date:   Sun Nov 21 17:25:00 2021 -0300
+
+    formulario a administracion de producto
+
+[33mcommit 8a800b04cceb93405d86082361b47b3aab9309e4[m
+Author: Diegocent <diegovillalbacent1234@gmail.com>
+Date:   Sun Nov 21 15:41:12 2021 -0300
+
+    reinicio de formularios
+
+[33mcommit c5339dc18f39d6c7e44c0309e246199fe9c7e2d5[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/alex[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: marcosaguilar <marcosaguilarn91@gmail.com>
+Date:   Sat Nov 20 14:07:12 2021 -0400
+
+    limpieza y carga de detalle venta con disminucion de existencia de producto
+
+[33mcommit d757e20fd3682fcc5c646b2672014e6a05b0b5cb[m
+Author: marcosaguilar <marcosaguilarn91@gmail.com>
+Date:   Sat Nov 20 12:02:01 2021 -0400
+
+    ventas detalles
+
+[33mcommit 3308e70b4a190d107013c0c7b1041e7e460fd668[m
+Author: marcosaguilar <marcosaguilarn91@gmail.com>
+Date:   Sat Nov 20 03:30:42 2021 -0400
+
+    modulo registro de ventas
+
+[33mcommit dd4824b8d51871ab73691f471336817ceafa2abc[m
+Author: marcosaguilar <marcosaguilarn91@gmail.com>
+Date:   Sat Nov 20 01:00:38 2021 -0400
+
+    modulo cliente
+
+[33mcommit d0dfce3b5712e345a942a5f5b4cfe506dba6768f[m
+Author: marcosaguilar <marcosaguilarn91@gmail.com>
+Date:   Fri Nov 19 19:27:05 2021 -0400
+
+    modulo producto
+
+[33mcommit e28e63ee36c2cb8176e88bf1bfd70dc19d2610e3[m
+Author: marcosaguilar <marcosaguilarn91@gmail.com>
+Date:   Fri Nov 19 00:08:24 2021 -0400
+
+    base del proyecto
+
+[33mcommit 8b763039ca0b478d9975c8ed928e36a03f7e29e0[m
+Author: marcosaguilar <marcosaguilarn91@gmail.com>
+Date:   Thu Nov 18 23:04:03 2021 -0400
+
+    Initial commit
