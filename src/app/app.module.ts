@@ -17,6 +17,10 @@ import { ClienteAgregarComponent } from './components/cliente/cliente-agregar/cl
 import { ClienteModificarComponent } from './components/cliente/cliente-modificar/cliente-modificar.component';
 import { VentaComponent } from './components/venta/venta.component';
 import { VentaAgregarComponent } from './components/venta/venta-agregar/venta-agregar.component';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +41,9 @@ import { VentaAgregarComponent } from './components/venta/venta-agregar/venta-ag
     HttpClientModule,
     FormsModule,
     NgbModule,
+    CommonModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

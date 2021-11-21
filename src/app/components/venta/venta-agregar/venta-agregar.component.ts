@@ -6,19 +6,19 @@ import { Cliente } from 'src/app/models/Cliente';
 import { ClienteService } from 'src/app/services/cliente.service';
 import { ProductoService } from 'src/app/services/producto.service';
 import { Producto } from 'src/app/models/Producto';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-venta-agregar',
   templateUrl: './venta-agregar.component.html',
-  styleUrls: ['./venta-agregar.component.css']
+  styleUrls: ['./venta-agregar.component.css'],
 })
 export class VentaAgregarComponent implements OnInit {
-
   fecha!: string;
   nroFactura!: number;
   clienteRuc!: number;
   total: number = 0;
-  detalles: VentaDetalle [] = [];
+  detalles: VentaDetalle[] = [];
   cantidad!: number;
   totalDetalle!: number;
 
@@ -26,7 +26,6 @@ export class VentaAgregarComponent implements OnInit {
   listaProductos!: Producto[];
 
   venta: Venta = new Venta();
-  
 
   productoCodigo!: number;
 
@@ -34,6 +33,7 @@ export class VentaAgregarComponent implements OnInit {
     private ventaService: VentaService,
     private clienteService: ClienteService,
     private productoService: ProductoService,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -54,27 +54,37 @@ export class VentaAgregarComponent implements OnInit {
     console.log(this.venta);
     this.ventaService.addVenta(this.venta);
   }
+  success(): void {
+    this.toastr.error('Ha superado la existencia', 'ERROR');
+  }
 
   guardarVentaDetalle(): void {
     //si la cantidad es menor o igual a la existencia se guarda si no no.
     var ventaDetalle = new VentaDetalle();
-    ventaDetalle.producto = this.productoService.getProducto(this.productoCodigo);
-    if(this.cantidad <= ventaDetalle.producto.existencia && this.cantidad != 0){
+    ventaDetalle.producto = this.productoService.getProducto(
+      this.productoCodigo
+    );
+    if (
+      this.cantidad <= ventaDetalle.producto.existencia &&
+      this.cantidad != 0
+    ) {
       //sacar de la existencia la cantidad de productos
-      var productoActualizado : Producto = new Producto();
+      var productoActualizado: Producto = new Producto();
       productoActualizado = ventaDetalle.producto;
-      productoActualizado.existencia = productoActualizado.existencia - this.cantidad;
-      this.productoService.putProducto(ventaDetalle.producto,productoActualizado);
+      productoActualizado.existencia =
+        productoActualizado.existencia - this.cantidad;
+      this.productoService.putProducto(
+        ventaDetalle.producto,
+        productoActualizado
+      );
 
       ventaDetalle.cantidad = this.cantidad;
-      ventaDetalle.totalDetalle = ventaDetalle.cantidad * ventaDetalle.producto.precio;
+      ventaDetalle.totalDetalle =
+        ventaDetalle.cantidad * ventaDetalle.producto.precio;
       this.detalles.push(ventaDetalle);
       this.total = this.total + ventaDetalle.totalDetalle;
-    }else{
-
+    } else {
+      this.success();
     }
-
-
-
   }
 }
